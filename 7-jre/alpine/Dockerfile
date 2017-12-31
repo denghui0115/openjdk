@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM denghui/alpine:3.4-tz.8
+FROM denghui/alpine:3.7-tz.8
 
 # A few problems with compiling Java from source:
 #  1. Oracle.  Licensing prevents us from redistributing the official JDK.
@@ -12,7 +12,7 @@ FROM denghui/alpine:3.4-tz.8
 #       really hairy.
 
 # Default to UTF-8 file.encoding
-ENV LANG C.UTF-8
+ENV LANG zh_CN.UTF-8
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
