@@ -5,11 +5,7 @@
 #
 
 FROM denghui/alpine:3.7-tz.8
-
-# A few problems with compiling Java from source:
-#  1. Oracle.  Licensing prevents us from redistributing the official JDK.
-#  2. Compiling OpenJDK also requires the JDK to be installed, and it gets
-#       really hairy.
+MAINTAINER denghui <denghui0115@163.com>
 
 # Default to UTF-8 file.encoding
 ENV LANG zh_CN.UTF-8
