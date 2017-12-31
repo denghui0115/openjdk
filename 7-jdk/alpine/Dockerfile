@@ -29,3 +29,4 @@ RUN set -x \
 	&& apk add --no-cache \
 		openjdk7="$JAVA_ALPINE_VERSION" \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
+	
