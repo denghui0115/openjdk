@@ -4,15 +4,11 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM alpine:3.4
-
-# A few problems with compiling Java from source:
-#  1. Oracle.  Licensing prevents us from redistributing the official JDK.
-#  2. Compiling OpenJDK also requires the JDK to be installed, and it gets
-#       really hairy.
+FROM denghui/alpine:3.7-tz.8
+MAINTAINER denghui <denghui0115@163.com>
 
 # Default to UTF-8 file.encoding
-ENV LANG C.UTF-8
+ENV LANG zh_CN.UTF-8
 
 # add a simple script that can auto-detect the appropriate JAVA_HOME value
 # based on whether the JDK or only the JRE is installed
@@ -26,10 +22,11 @@ RUN { \
 ENV JAVA_HOME /usr/lib/jvm/java-1.7-openjdk/jre
 ENV PATH $PATH:/usr/lib/jvm/java-1.7-openjdk/jre/bin:/usr/lib/jvm/java-1.7-openjdk/bin
 
-ENV JAVA_VERSION 7u121
-ENV JAVA_ALPINE_VERSION 7.121.2.6.8-r0
+ENV JAVA_VERSION 7u151
+ENV JAVA_ALPINE_VERSION 7.151.2.6.11-r0
 
 RUN set -x \
 	&& apk add --no-cache \
 		openjdk7-jre="$JAVA_ALPINE_VERSION" \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
+	
